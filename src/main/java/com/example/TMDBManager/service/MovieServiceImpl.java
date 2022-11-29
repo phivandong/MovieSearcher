@@ -24,8 +24,8 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public List<String> getCountrySet() {
         List<String> countryList = new ArrayList<>();
-        movieRepository.setOfCountry().parallelStream().forEach(s -> countryList.addAll(Arrays.stream(s.split(",")).toList()));
-        return countryList.parallelStream().distinct().sorted().collect(Collectors.toList());
+        movieRepository.setOfCountry().parallelStream().forEach(s -> countryList.addAll(Arrays.stream(s.split(", ")).toList()));
+        return countryList.parallelStream().filter(s -> !s.isBlank()).distinct().sorted().collect(Collectors.toList());
     }
 
     @Override

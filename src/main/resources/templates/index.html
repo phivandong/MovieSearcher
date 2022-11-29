@@ -3,7 +3,7 @@
   <head>
     <meta charset="ISO-8859-1" />
     <title>Movie Searcher</title>
-    <link th:href="@{/main.js}" rel="stylesheet" />
+    <link href="../../static/style.css" th:href="@{/style.css}" rel="stylesheet" type="text/css" media="all" />
   </head>
   <body>
     <div align="center">
@@ -15,6 +15,7 @@
         <input
           type="text"
           name="keyword"
+          placeholder="Enter keyword..."
           id="keyword"
           size="50"
           th:object="${searchRequest}"
